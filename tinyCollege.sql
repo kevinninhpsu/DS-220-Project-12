@@ -1,1 +1,4 @@
-
+CREATE TABLE facultyMember (
+  facultyID VARCHAR(255) SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
