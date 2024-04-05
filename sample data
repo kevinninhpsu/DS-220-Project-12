@@ -1,0 +1,77 @@
+INSERT INTO facultyMember (facultyName) VALUES 
+('John Doe'),
+('Jane Smith'),
+('Michael Johnson'),
+('Alice Johnson'),
+('Robert Miller'),
+('Emily Brown');
+
+INSERT INTO department (departmentName) VALUES 
+('Computer Science'),
+('Mathematics'),
+('Physics'),
+('Biology'),
+('Chemistry'),
+('Engineering');
+
+INSERT INTO vehicle (vehicleType, odometerStart, odometerEnd, maintenanceComplains, gallonsPurchased, creditCardNumber) VALUES 
+('Sedan', 10000, 10500, 'Oil change needed', 10.5, '1234567890123456'),
+('Minivan', 20000, 20550, 'Brake pads worn out', 15.2, '6543210987654321'),
+('Truck', 30000, 30575, 'Engine overheating', NULL, NULL),
+('SUV', 40000, 40550, 'Tire rotation needed', 20.8, '9876543210123456'),
+('Truck', 50000, 50575, 'Check engine light on', 25.5, '0123456789012345'),
+('Hatchback', 60000, 60575, 'Windshield cracked', NULL, NULL);
+
+INSERT INTO maintenanceLogForm (vehicleID, maintenanceDescription, logEntryDate, completeDate, mechanicInformation) VALUES 
+(1, 'Performed oil change', '2024-03-01', '2024-03-01', 'John Smith'),
+(2, 'Replaced brake pads', '2024-03-05', '2024-03-06', 'Jane Doe'),
+(3, 'Replaced thermostat', '2024-03-10', '2024-03-11', 'Michael Johnson'),
+(4, 'Rotated tires', '2024-03-15', '2024-03-15', 'David Clark'),
+(5, 'Diagnosed engine issue', '2024-03-20', NULL, 'Jennifer Lee'),
+(6, 'Replaced windshield', '2024-03-25', '2024-03-26', 'Samuel Wilson');
+
+INSERT INTO maintenanceDetailForm (logID, partsUsed, maintenanceSummary, completionStatus) VALUES 
+(1, 'Oil filter, Engine oil', 'Changed oil and oil filter', true),
+(2, 'Brake pads', 'Replaced worn-out brake pads', true),
+(3, 'Thermostat', 'Replaced faulty thermostat', true),
+(4, 'Tire jack, Lug wrench', 'Rotated tires for even wear', true),
+(5, 'Diagnostic tool', 'Identified faulty oxygen sensor', false),
+(6, 'Windshield, Adhesive', 'Replaced cracked windshield', true);
+
+INSERT INTO partsInventory (partName, partQuality, minimumOnHand) VALUES 
+('Oil filter', 'Good', 10),
+('Engine oil', 'Premium', 20),
+('Brake pads', 'Standard', 15),
+('Thermostat', 'Premium', 5),
+('Tire jack', 'Standard', 8),
+('Lug wrench', 'Standard', 10),
+('Windshield', 'Premium', 3),
+('Adhesive', 'Premium', 5),
+('Oxygen sensor', 'Premium', 5);
+
+INSERT INTO partsUsageForm (logID, detailID, partID) VALUES 
+(1, 1, 1),
+(2, 2, 3),
+(3, 3, 4),
+(4, 4, 1),
+(4, 4, 2),
+(6, 6, 3),
+(6, 6, 4);
+
+INSERT INTO TFBS_Center (vehicleID, logID, partID) VALUES 
+(1, 1, 1),
+(2, 2, 3),
+(3, 3, 4),
+(4, 4, 1),
+(4, 4, 2),
+(6, 6, 3),
+(6, 6, 4);
+
+INSERT INTO monthlyReports (month, maintenanceSummary, mechanicInformation, usageID, mileageReport, revenue) VALUES 
+('2024-03-01', 'Changed oil and oil filter', 'John Smith', 1, 'Increased mileage compared to last month', 500.00),
+('2024-03-01', 'Replaced worn-out brake pads', 'Jane Doe', 2, 'No significant changes in mileage', 700.00),
+('2024-03-01', 'Replaced faulty thermostat', 'Michael Johnson', 3, 'Decreased mileage due to engine issues', 600.00),
+('2024-03-01', 'Rotated tires for even wear', 'David Clark', NULL, 'Increased mileage due to regular maintenance', 550.00),
+('2024-03-01', 'Identified faulty oxygen sensor', 'Jennifer Lee', 5, 'Decreased mileage due to engine issue', 450.00),
+('2024-03-01', 'Replaced cracked windshield', 'Samuel Wilson', NULL, 'No significant changes in mileage', 700.00);
+
