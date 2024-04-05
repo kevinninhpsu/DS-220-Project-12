@@ -80,9 +80,9 @@ INSERT INTO monthlyReports (month, maintenanceSummary, mechanicInformation, usag
 ('2024-03-01', 'Changed oil filter', 'John Smith', 1, 'Increased mileage compared to last month', 500.00),
 ('2024-03-01', 'Replaced worn-out brake pads', 'Jane Doe', 2, 'No significant changes in mileage', 700.00),
 ('2024-03-01', 'Changed engine oil', 'Michael Johnson', 3, 'Decreased mileage due to engine issues', 600.00),
-('2024-03-01', 'Rotated tires for even wear', 'David Clark', NULL, 'Increased mileage due to regular maintenance', 550.00),
+('2024-03-01', 'Rotated tires for even wear', 'David Clark', 5, 'Increased mileage due to regular maintenance', 550.00),
 ('2024-03-01', 'Engine not checked yet', 'Jennifer Lee', NULL, 'Decreased mileage due to engine issue', 450.00),
-('2024-03-01', 'Replaced cracked windshield', 'Samuel Wilson', NULL, 'No significant changes in mileage', 700.00),
-('2024-03-01', 'Replaced old battery with new one', 'Daniel Brown', NULL, 'No significant changes in mileage', 600.00),
+('2024-03-01', 'Replaced cracked windshield', 'Samuel Wilson', 7, 'No significant changes in mileage', 700.00),
+('2024-03-01', 'Replaced old battery with new one', 'Daniel Brown', 8, 'No significant changes in mileage', 600.00),
 ('2024-03-01', 'Inspection not yet completed', 'Olivia Wilson', NULL, 'No significant changes in mileage', 550.00);
 
