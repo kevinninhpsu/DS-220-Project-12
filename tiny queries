@@ -1,0 +1,26 @@
+SELECT * 
+FROM maintenanceLogForm
+WHERE vehicleid = 4 and completeDate IS NOT null and mechanicInformation IS NOT NULL;
+
+select minimumonhand 
+from partsinventory
+where partname = 'Oil filter';
+
+SELECT SUM(odometerEnd - odometerStart) AS total_miles_driven
+FROM vehicle
+where vehicletype = 'Truck';
+
+SELECT v.vehicleid, v.vehicletype, v.maintenancecomplains
+FROM vehicle v
+JOIN maintenanceLogForm ml ON v.vehicleID = ml.vehicleID
+JOIN maintenanceDetailForm md ON ml.logID = md.logID
+WHERE md.completionStatus = true;
+
+SELECT ml.mechanicInformation
+FROM maintenanceLogForm ml
+JOIN maintenanceDetailForm md ON ml.logID = md.logID
+WHERE ml.vehicleID = 7;
+
+SELECT SUM(revenue) AS total_revenue
+FROM monthlyReports
+WHERE month = '2024-03-01';
