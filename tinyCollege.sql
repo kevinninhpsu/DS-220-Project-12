@@ -30,7 +30,6 @@ CREATE TABLE maintenanceLogForm (
 CREATE TABLE maintenanceDetailForm (
     detailID SERIAL PRIMARY KEY, /*ID for detail form*/
     logID INT REFERENCES  maintenanceLogForm(logID), /*ID for log form*/
-    mechanicInformation TEXT REFERENCES maintenanceLogForm(mechanicInformation),
     partsUsed TEXT, /*parts used on each activity*/
     maintenanceSummary TEXT,/*Details about each maintenance activity and summary of issues/solutions */
     completionStatus BOOLEAN default FALSE/*Indicates whether or not maintenance is complete*/
@@ -61,8 +60,14 @@ CREATE TABLE monthlyReports (
     reportID SERIAL PRIMARY KEY, /*ID of report*/
     month DATE, /*Indicates which month the report is for*/
     maintenanceSummary TEXT REFERENCES maintenanceDetailForm(maintenanceSummary), 
-    mechanicInformation TEXT REFERENCES maintenanceDetailForm(mechanicInformation),
+    mechanicInformation TEXT REFERENCES maintenanceLogForm(mechanicInformation),
     usageID INT REFERENCES partsUsageForm(usageID),
     mileageReport TEXT,
     revenue DECIMAL
 );
+
+ALTER TABLE maintenanceLogForm
+ADD CONSTRAINT unique_mechanic_information UNIQUE (mechanicInformation);
+ALTER TABLE maintenanceDetailForm
+ADD CONSTRAINT unique_maintenance_summary UNIQUE (maintenanceSummary);
+
